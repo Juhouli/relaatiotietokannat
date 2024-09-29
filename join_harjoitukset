@@ -1,0 +1,29 @@
+Viikko 3
+
+Join harjoitukset
+
+T1
+select country.name as "country name", airport.name as "airport name"
+    -> from country inner join airport on airport.iso_country = country.iso_country
+    -> where country.name = "Finland" and scheduled_service = "yes";
+![ruudunkaappaus](c.1.png)
+
+T2
+select game.screen_name, airport.name
+    -> from game inner join airport on airport.ident = game.location;
+![ruudunkaappaus](c.2.png)
+
+T3
+select game.screen_name, country.name
+    -> from game, country
+    -> inner join airport on airport.iso_country = country.iso_country
+    -> where game.location = airport.ident;
+![ruudunkaappaus](c.3.png)
+
+T4
+select airport.name, game.screen_name
+    -> from country
+    -> inner join airport on airport.iso_country = country.iso_country
+    -> left join game on game.location = airport.ident
+    -> where airport.name like "%hels%";
+![ruudunkaappaus](c.4.png)
