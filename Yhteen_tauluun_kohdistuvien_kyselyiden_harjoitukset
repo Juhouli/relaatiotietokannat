@@ -1,39 +1,37 @@
-VIIKKO 2
+# Yhteen tauluun kohdistuvien kyselyiden harjoitukset
 
-Yhteen tauluun kohdistuvien kyselyiden harjoitukset
-
-T1
+### T1
 select * from goal;
 ![ruudunkaappaus](a.1.png)
 
-T2
+### T2
 select name, type from airport where iso_country like "FI";
 ![ruudunkaappaus](a.2.png)
 
-T3
+### T3
 select name from airport where iso_country like "FI" order by name;
 ![ruudunkaappaus](a.3.png)
 
-T4
+### T4
 select name, type from airport where iso_country like "FI" order by type, name;
 ![ruudunkaappaus](a.4.png)
 
-T5
+### T5
 select name from country where name like "F%";
 ![ruudunkaappaus](a.5.png)
 
-T6
+### T6
 select name from country where name like "%F%";
 ![ruudunkaappaus](a.6.png)
 
-T7
+### T7
 select location from game where screen_name like "Vesa";
 ![ruudunkaappaus](a.7.png)
 
-T8
+### T8
 select co2_consumed from game where screen_name like "Ilkka";
 ![ruudunkaappaus](a.8.png)
 
-T9
+### T9
 select co2_budget from game limit 1;
 ![ruudunkaappaus](a.9.png)
