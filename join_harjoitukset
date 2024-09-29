@@ -27,3 +27,8 @@ select airport.name, game.screen_name
     -> left join game on game.location = airport.ident
     -> where airport.name like "%hels%";
 ![ruudunkaappaus](c.4.png)
+
+T5
+select name, screen_name
+    -> from goal left join goal_reached on goal.id = goal_id  left join game on game.id = game_id;
+![ruudunkaappaus](c.5.png)
