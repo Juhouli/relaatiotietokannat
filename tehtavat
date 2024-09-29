@@ -1,0 +1,236 @@
+VIIKKO 2
+
+Yhteen tauluun kohdistuvien kyselyiden harjoitukset
+
+T1
+select * from goal;
+![ruudunkaappaus](a.1.png)
+
+T2
+select name, type from airport where iso_country like "FI";
+![ruudunkaappaus](a.2.png)
+
+T3
+select name from airport where iso_country like "FI" order by name;
+![ruudunkaappaus](a.3.png)
+
+T4
+select name, type from airport where iso_country like "FI" order by type, name;
+![ruudunkaappaus](a.4.png)
+
+T5
+select name from country where name like "F%";
+![ruudunkaappaus](a.5.png)
+
+T6
+select name from country where name like "%F%";
+![ruudunkaappaus](a.6.png)
+
+T7
+select location from game where screen_name like "Vesa";
+![ruudunkaappaus](a.7.png)
+
+T8
+select co2_consumed from game where screen_name like "Ilkka";
+![ruudunkaappaus](a.8.png)
+
+T9
+select co2_budget from game limit 1;
+![ruudunkaappaus](a.9.png)
+--------------------------------------------------------------------
+Where-osan liitos ehto harjoitukset
+
+T1
+select country.name as "country name", airport.name as "airport name"
+    -> from airport, country
+    -> where airport.iso_country = country.iso_country and country.name = "Iceland";
+![ruudunkaappaus](b.1.png)
+
+T2
+select airport.name as "airport name"
+from airport, country
+where airport.iso_country = country.iso_country and country.name = "France" and airport.type = "large_airport";
+![ruudunkaappaus](b.2.png)
+
+T3
+select country.name as "country_name", airport.name as "airport_name"
+    -> from country, airport
+    -> where airport.continent = country.continent and country.name = "Antarctica";
+![ruudunkaappaus](b.3.png)
+
+T4
+select airport.elevation_ft
+    -> from airport, game
+    -> where game.location = airport.ident and game.screen_name = "Heini";
+![ruudunkaappaus](b.4.png)
+
+T5
+select airport.elevation_ft* 0.3048 as "elevation_m"
+    -> from airport, game
+    -> where game.location = airport.ident and game.screen_name = "Heini";
+![ruudunkaappaus](b.5.png)
+
+T6
+select airport.name
+    -> from airport, game
+    -> where game.location = airport.ident and game.screen_name = "Ilkka";
+![ruudunkaappaus](b.6.png)
+
+T7
+select country.name
+    -> from airport, game, country
+    -> where game.location = airport.ident and airport.iso_country = country.iso_country and game.screen_name = "Ilkka";
+![ruudunkaappaus](b.7.png)
+
+T8
+select name
+from goal, goal_reached, game
+where game.id = game_id and goal.id = goal_id and screen_name = "Heini";
+
+![ruudunkaappaus](b.8.png)
+
+T9
+select airport.name
+from airport, game, goal, goal_reached
+where ident = location and game.id = game_id and goal.id = goal_id and screen_name = "Ilkka" and goal.name = "CLOUDS";
+![ruudunkaappaus](b.9.png)
+
+T10
+select country.name
+    -> from airport, game, goal, goal_reached, country
+    -> where ident = location and airport.iso_country = country.iso_country and game.id = game_id and goal.id = goal_id
+and screen_name = "Ilkka" and goal.name = "CLOUDS";
+![ruudunkaappaus](b.10.png)
+
+####################################################################
+
+
+Viikko 3
+
+Join harjoitukset
+
+T1
+select country.name as "country name", airport.name as "airport name"
+    -> from country inner join airport on airport.iso_country = country.iso_country
+    -> where country.name = "Finland" and scheduled_service = "yes";
+![ruudunkaappaus](c.1.png)
+
+T2
+select game.screen_name, airport.name
+    -> from game inner join airport on airport.ident = game.location;
+![ruudunkaappaus](c.2.png)
+
+T3
+
+![ruudunkaappaus](c.3.png)
+
+T4
+
+![ruudunkaappaus](c.4.png)
+
+T5
+
+![ruudunkaappaus](c.5.png)
+
+T6
+
+![ruudunkaappaus](c.6.png)
+
+T7
+
+![ruudunkaappaus](c.7.png)
+
+T8
+
+![ruudunkaappaus](c.8.png)
+
+T9
+
+![ruudunkaappaus](c.9.png)
+
+T10
+
+![ruudunkaappaus](c.10.png)
+
+------------------------------------
+T1
+
+![ruudunkaappaus](c.1.png)
+
+T2
+
+![ruudunkaappaus](c.2.png)
+
+T3
+
+![ruudunkaappaus](c.3.png)
+
+T4
+
+![ruudunkaappaus](c.4.png)
+
+T5
+
+![ruudunkaappaus](c.5.png)
+
+T6
+
+![ruudunkaappaus](c.6.png)
+
+T7
+
+![ruudunkaappaus](c.7.png)
+
+T8
+
+![ruudunkaappaus](c.8.png)
+
+T9
+
+![ruudunkaappaus](c.9.png)
+
+T10
+
+![ruudunkaappaus](c.10.png)
+###################################33
+T1
+
+![ruudunkaappaus](c.1.png)
+
+T2
+
+![ruudunkaappaus](c.2.png)
+
+T3
+
+![ruudunkaappaus](c.3.png)
+
+T4
+
+![ruudunkaappaus](c.4.png)
+
+T5
+
+![ruudunkaappaus](c.5.png)
+
+T6
+
+![ruudunkaappaus](c.6.png)
+
+T7
+
+![ruudunkaappaus](c.7.png)
+
+T8
+
+![ruudunkaappaus](c.8.png)
+
+T9
+
+![ruudunkaappaus](c.9.png)
+
+T10
+
+![ruudunkaappaus](c.10.png)
+
+
