@@ -1,0 +1,51 @@
+Viikko 3
+
+Sisäkysely harjoitukset
+
+T1
+select country.name
+    -> from country
+    -> where country.iso_country in(
+    -> select airport.iso_country
+    -> from airport
+    -> where airport.name like "%satsuma%");
+![ruudunkaappaus](d.1.png)
+
+T2
+select airport.name
+    -> from airport
+    -> where airport.iso_country in(
+    -> select country.iso_country
+    -> from country
+    -> where country.name = "Monaco");
+![ruudunkaappaus](d.2.png)
+
+T3
+select game.screen_name
+    -> from game
+    -> where game.id in(
+    -> select goal_reached.game_id
+    -> from goal_reached
+    -> where goal_reached.goal_id in(
+    -> select goal.id
+    -> from goal
+    -> where goal.name = "CLOUDS")
+    -> );
+![ruudunkaappaus](d.3.png)
+
+T4
+select country.name
+    -> from country
+    -> where country.iso_country not in(
+    -> select airport.iso_country
+    -> from airport);
+![ruudunkaappaus](d.4.png)
+
+T5
+select goal.name
+    -> from goal
+    -> where goal.id not in(
+    -> select goal.id
+    -> from goal, goal_reached, game
+    -> where game.id = goal_reached.game_id and goal.id = goal_reached.goal_id and game.screen_name = "Heini");
+![ruudunkaappaus](d.5.png)
