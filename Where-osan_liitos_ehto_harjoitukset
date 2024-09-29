@@ -1,0 +1,65 @@
+Viikko 2
+
+Where-osan liitos ehto harjoitukset
+
+T1
+select country.name as "country name", airport.name as "airport name"
+    -> from airport, country
+    -> where airport.iso_country = country.iso_country and country.name = "Iceland";
+![ruudunkaappaus](b.1.png)
+
+T2
+select airport.name as "airport name"
+from airport, country
+where airport.iso_country = country.iso_country and country.name = "France" and airport.type = "large_airport";
+![ruudunkaappaus](b.2.png)
+
+T3
+select country.name as "country_name", airport.name as "airport_name"
+    -> from country, airport
+    -> where airport.continent = country.continent and country.name = "Antarctica";
+![ruudunkaappaus](b.3.png)
+
+T4
+select airport.elevation_ft
+    -> from airport, game
+    -> where game.location = airport.ident and game.screen_name = "Heini";
+![ruudunkaappaus](b.4.png)
+
+T5
+select airport.elevation_ft* 0.3048 as "elevation_m"
+    -> from airport, game
+    -> where game.location = airport.ident and game.screen_name = "Heini";
+![ruudunkaappaus](b.5.png)
+
+T6
+select airport.name
+    -> from airport, game
+    -> where game.location = airport.ident and game.screen_name = "Ilkka";
+![ruudunkaappaus](b.6.png)
+
+T7
+select country.name
+    -> from airport, game, country
+    -> where game.location = airport.ident and airport.iso_country = country.iso_country and game.screen_name = "Ilkka";
+![ruudunkaappaus](b.7.png)
+
+T8
+select name
+from goal, goal_reached, game
+where game.id = game_id and goal.id = goal_id and screen_name = "Heini";
+
+![ruudunkaappaus](b.8.png)
+
+T9
+select airport.name
+from airport, game, goal, goal_reached
+where ident = location and game.id = game_id and goal.id = goal_id and screen_name = "Ilkka" and goal.name = "CLOUDS";
+![ruudunkaappaus](b.9.png)
+
+T10
+select country.name
+    -> from airport, game, goal, goal_reached, country
+    -> where ident = location and airport.iso_country = country.iso_country and game.id = game_id and goal.id = goal_id
+and screen_name = "Ilkka" and goal.name = "CLOUDS";
+![ruudunkaappaus](b.10.png)
