@@ -1,8 +1,6 @@
-Viikko 3
+# Sisäkysely harjoitukset
 
-Sisäkysely harjoitukset
-
-T1
+### T1
 select country.name
     -> from country
     -> where country.iso_country in(
@@ -11,7 +9,7 @@ select country.name
     -> where airport.name like "%satsuma%");
 ![ruudunkaappaus](d.1.png)
 
-T2
+### T2
 select airport.name
     -> from airport
     -> where airport.iso_country in(
@@ -20,7 +18,7 @@ select airport.name
     -> where country.name = "Monaco");
 ![ruudunkaappaus](d.2.png)
 
-T3
+### T3
 select game.screen_name
     -> from game
     -> where game.id in(
@@ -33,7 +31,7 @@ select game.screen_name
     -> );
 ![ruudunkaappaus](d.3.png)
 
-T4
+### T4
 select country.name
     -> from country
     -> where country.iso_country not in(
@@ -41,7 +39,7 @@ select country.name
     -> from airport);
 ![ruudunkaappaus](d.4.png)
 
-T5
+### T5
 select goal.name
     -> from goal
     -> where goal.id not in(
